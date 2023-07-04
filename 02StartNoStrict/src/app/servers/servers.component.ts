@@ -11,7 +11,8 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   allowNewServer: boolean = false;
   createServer: string = "No server created";
-  serverName: string = 'As';
+  serverName: string = 'Server 1';
+  username: string = '';
 
   constructor(){
     setTimeout(
@@ -22,10 +23,16 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    this.createServer = "Server was created and added.";
+    this.createServer = this.serverName + " was created and added.";
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onClickResetUser() {
+    if(this.username.length > 0) {
+      this.username = "";
+    }
   }
 }

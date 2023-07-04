@@ -1,11 +1,21 @@
+
+<hr>
+    <h2>Assignment - 2 way binding</h2>
+    <input  type="text"
+            [(ngModel)]="username">
+    <br/>
+        <p> {{ username }} </p>
+    <br/>
+        <button type="button" class="btn btn-success" 
+                (click)="onClickResetUser()">Reset User</button>
+<hr>
 <p> {{ serverName }} </p>
 <input  type="text"
         class="form-control"
-        (input)="onUpdateServerName($event)">
-<input  type="text"
-        class="form-control"
         [(ngModel)]="serverName">
-<p>createServer: {{ createServer }}</p>
+<br/>
+    <p> {{ createServer }} </p>
+<br/>
 <p>Button {{ allowNewServer }}</p>
 <button type="button" class="btn btn-success" 
         [disabled]="!allowNewServer"
