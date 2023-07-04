@@ -7,7 +7,9 @@
         <p> {{ username }} </p>
     <br/>
         <button type="button" class="btn btn-success" 
-                (click)="onClickResetUser()">Reset User</button>
+                (click)="onClickResetUser()"
+                [disabled]="username === ''"
+                >Reset User</button>
 <hr>
 <p> {{ serverName }} </p>
 <input  type="text"
