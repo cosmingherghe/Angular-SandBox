@@ -6,6 +6,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { FunComponent } from './fun/fun.component';
 import { DisciplineComponent } from './discipline/discipline.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { DisciplineComponent } from './discipline/discipline.component';
     DisciplineComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
