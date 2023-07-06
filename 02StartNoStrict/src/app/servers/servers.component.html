@@ -1,27 +1,21 @@
-
-<hr>
-    <h2>Assignment - 2 way binding</h2>
-    <input  type="text"
-            [(ngModel)]="username">
-    <br/>
-        <p> {{ username }} </p>
-    <br/>
-        <button type="button" class="btn btn-success" 
-                (click)="onClickResetUser()"
-                [disabled]="username === ''"
-                >Reset User</button>
-<hr>
-<p> {{ serverName }} </p>
+<br/>
 <input  type="text"
-        class="form-control"
-        [(ngModel)]="serverName">
-<br/>
-    <p> {{ createServer }} </p>
-<br/>
-<p>Button {{ allowNewServer }}</p>
+        [(ngModel)]="serverName"> <br/><br/>
 <button type="button" class="btn btn-success" 
         [disabled]="!allowNewServer"
         (click)="onCreateServer()"
 >Add New Server</button>
-<p>servers works!</p>
-<app-server></app-server>
+<br/>
+<br/>
+
+<div *ngIf="isServerCreated; else noServer">
+        <p>Server <b> {{ serverName }} </b> is created.</p>
+</div>
+<!-- *ngFor ??? -->
+        <app-server *ngFor="let server of servers">
+        </app-server>
+<!--  -->
+<ng-template #noServer>
+        <p>No server was created!</p>
+<ng-template>
+       
