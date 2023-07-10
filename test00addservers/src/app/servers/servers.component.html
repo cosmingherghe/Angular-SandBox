@@ -1,14 +1,26 @@
 <div class="m-3">
-    <input class="m-1" type="text" id="name" placeholder="Server Name">
-    <input class="m-1" type="text" id="description" placeholder="Server Description">
-    <br>
-    <button class="btn btn-success m-1">Add Server</button>
-    <button class="btn btn-primary m-1">Add Blueprint</button>
+    <h3>Add a new Server or a Blueprint</h3>
+    <input  class="form-control m-1 w-25" 
+            type="text" 
+            id="name" 
+            placeholder="Server Name"
+            [(ngModel)]="newServerName">
+    <input  class="form-control m-1 w-25" 
+            type="text" 
+            id="description" 
+            placeholder="Server Description"
+            [(ngModel)]="newServerDescription">
+    <button class="btn btn-success m-1"
+            (click)="onAddServer()"
+    >Add Server</button>
+    <button class="btn btn-primary m-1"
+            (click)="onAddBlueprint()"
+    >Add Blueprint</button>
 </div>
 <div class="m-3 list-group" *ngFor="let server of servers">
     <a  href="#" 
         class=" list-group-item 
-                flex-column align-items-start" 
+                flex-column align-items-start w-25" 
                 [ngClass]="{
                     'list-group-item-primary': server.isBlueprint,
                     'list-group-item-success': !server.isBlueprint,
@@ -24,6 +36,3 @@
         </p>
     </a>
 </div>
-
-<!-- list-group-item-warning -->
-<!--  list-group-item-secondary -->
